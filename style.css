@@ -26,6 +26,8 @@ body {
   font-size: 17px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
 
@@ -191,10 +193,15 @@ a { color: inherit; }
   font-weight: 400;
   color: var(--mute);
 }
-.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.tags { gap: 6px 0; }
-.tags li { font-size: 17px; }
-.tags li:not(:last-child)::after { content: "/"; color: var(--mute); font-weight: 300; margin: 0 12px; }
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  column-gap: 24px;
+}
+.tags li { padding: 5px 0; }
 
 .contact { background: var(--ink); color: var(--paper); padding: clamp(56px, 9vw, 120px) 0 32px; }
 .contact .label {
@@ -225,6 +232,7 @@ a { color: inherit; }
   list-style: none;
 }
 .contact .links a { text-decoration: none; }
+.ext { width: 0.6em; height: 0.6em; margin-left: 0.2em; vertical-align: 0.05em; }
 .contact .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .contact footer {
   display: flex;
@@ -244,10 +252,30 @@ a { color: inherit; }
   .project + .project { border-top: 1px solid var(--ink); }
 }
 @media (max-width: 720px) {
-  .section { grid-template-columns: 1fr; }
+  body { font-size: 16px; }
+  .bar .wrap { height: 52px; }
+  .hero { padding-top: 48px; }
+  .lede { margin-top: 10px; }
+  .facts { grid-template-columns: 1fr; margin-top: 40px; }
+  .facts div, .facts div + div {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    padding: 12px 0;
+    border-left: 0;
+  }
+  .facts div + div { border-top: 1px solid var(--ink); }
+  .facts dt { margin: 3px 0 0; }
+  .section { grid-template-columns: 1fr; gap: 20px; padding: 20px 0 56px; scroll-margin-top: 52px; }
   .section h2 { position: static; }
-  .facts { grid-template-columns: 1fr; }
-  .facts div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--ink); }
+  .about p { font-size: 19px; }
+  .job-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .job h3, .edu h3 { font-size: 19px; }
+  .job { padding-bottom: 28px; }
+  .points { margin-top: 14px; }
+  .points li { padding-left: 22px; margin-top: 8px; }
+  .project .points { font-size: 16px; }
+  .tags { grid-template-columns: 1fr 1fr; column-gap: 16px; }
+  .contact .links { gap: 12px 32px; margin-top: 32px; }
   .bar nav a:not(.keep) { display: none; }
 }
 
