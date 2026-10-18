@@ -1,83 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Emoji Button</title>
-    
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        #emoji-display {
-            font-size: 150px; 
-            margin-bottom: 20px;
-        }
-
-        #click-button {
-            padding: 15px 30px;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.1s ease, transform 0.1s ease;
-        }
-
-        #click-button:active {
-            background-color: #0056b3;
-            transform: scale(0.98);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Gulino</title>
+  <meta name="description" content="Joseph Gulino, software engineer. LEAP Software Engineer at Fidelity Investments. B.S. Computer Science, Appalachian State University.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="emoji-display">🙁</div>
+  <div class="bar">
+    <div class="wrap">
+      <a class="mark" href="#top" aria-label="Joseph Gulino, back to top"><i>[</i>Joseph Gulino<i>]</i></a>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="keep" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
 
-    <button id="click-button">
-        Click Me
-    </button>
+  <main id="top">
+    <section class="hero wrap">
+      <h1>Joseph Gulino</h1>
+      <p class="lede">Software engineer at Fidelity Investments.</p>
 
-    <script>
-        const emojiDisplay = document.getElementById('emoji-display');
-        const clickButton = document.getElementById('click-button');
+      <dl class="facts">
+        <div>
+          <dt>Now</dt>
+          <dd>LEAP Software Engineer<small>Fidelity Investments</small></dd>
+        </div>
+        <div>
+          <dt>Studied</dt>
+          <dd>B.S. Computer Science<small>Minor in Mathematics, Appalachian State</small></dd>
+        </div>
+        <div>
+          <dt>Based</dt>
+          <dd>Raleigh, NC<small>Open to connecting</small></dd>
+        </div>
+      </dl>
+    </section>
 
-     
-        function handlePress() {
-            emojiDisplay.textContent = '😊'; 
-        }
+    <div class="wrap">
 
-      
-        function handleRelease() {
-            emojiDisplay.textContent = '🙁';
-        }
+      <section class="section" id="about">
+        <header><h2><span class="num">01</span>About</h2></header>
+        <div class="about">
+          <p>Hi, I'm Joseph. I'm a software engineer at Fidelity, where I started in the LEAP program this October.</p>
+          <p>I graduated from App State with a degree in computer science and a minor in math. While I was there I was a math tutor, and later the peer tutoring coordinator.</p>
+          <p>When I wasn't working or doing school, I often spent my time hiking, running, or at the gym. My favorite hike so far has been the Profile Trail on Grandfather Mountain.</p>
+        </div>
+      </section>
 
-        clickButton.addEventListener('mousedown', handlePress);
-        clickButton.addEventListener('mouseup', handleRelease);
-        
+      <section class="section" id="experience">
+        <header><h2><span class="num">02</span>Experience</h2></header>
+        <div>
 
-        document.addEventListener('mouseup', handleRelease); 
-        clickButton.addEventListener('touchstart', handlePress);
-        clickButton.addEventListener('touchend', handleRelease);
-        clickButton.addEventListener('touchcancel', handleRelease);
+          <article class="job">
+            <div class="job-head">
+              <h3>LEAP Software Engineer<span class="org">Fidelity Investments</span></h3>
+              <span class="when"><span class="now" title="Current role" aria-label="Current role"></span>Oct 2026 – Present</span>
+            </div>
+            <ul class="points">
+              <li>Software engineer in Fidelity's LEAP early-career technology program</li>
+            </ul>
+          </article>
 
-        clickButton.addEventListener('touchstart', function(event) {
-            event.preventDefault();
-        }, false);
+          <article class="job">
+            <div class="job-head">
+              <h3>Software Engineer<span class="org">Decidio</span></h3>
+              <span class="when">Jan 2026 – Oct 2026</span>
+            </div>
+            <ul class="points">
+              <li>Brought on board following a Fall 2025 capstone project; worked directly under the Chief Design Officer as part of a 2-person engineering team at a stealth-mode startup applying cognitive science to help people make better decisions</li>
+              <li>Led the rebuild of Decidio's Chrome extension, which lets shoppers collect products from any website into their Decidio lists</li>
+              <li>Contributed to the AR extension of the platform, developing features using SwiftUI, Firebase, and AI-driven APIs to capture and identify a wide range of consumer products</li>
+              <li>Engineered a custom Lisp-based event telemetry and analytics pipeline to track user engagement and derive real-time “desire scores,” providing data-driven insights into product interest and user behavior</li>
+            </ul>
+          </article>
 
-    </script>
+          <article class="job">
+            <div class="job-head">
+              <h3>Math Tutor &amp; Peer Tutoring Coordinator<span class="org">Appalachian State University</span></h3>
+              <span class="when">Aug 2023 – May 2026</span>
+            </div>
+            <ul class="points">
+              <li>Coordinated and managed a team of 15 math tutors, overseeing training sessions, monthly meetings, and day-to-day operations</li>
+              <li>Developed statistical dashboards to improve team performance tracking and identify tutoring trends</li>
+              <li>Supported 200+ students across math courses through direct tutoring and coordinated tutor assignments</li>
+              <li>Participated in recruitment by interviewing candidates and preparing subject-relevant questions</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <header><h2><span class="num">03</span>Education</h2></header>
+        <div class="edu">
+          <div class="job-head">
+            <h3>Appalachian State University</h3>
+            <span class="when">May 2026</span>
+          </div>
+          <p>Bachelor of Science in Computer Science, <em>Minor in Mathematics</em><br>Boone, NC</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <header><h2><span class="num">04</span>Projects</h2></header>
+        <div class="projects">
+
+          <article class="project">
+            <span class="idx">01</span>
+            <h3>Decidio Browser Extension</h3>
+            <p class="kind">Chrome Extension, JavaScript</p>
+            <ul class="points">
+              <li>Led the rebuild of Decidio's Manifest V3 Chrome extension, writing most of its current code</li>
+              <li>Built an on-page product picker that reads an item's name and photo from any store, falling back from nearby page content to Schema.org data, per-store rules and share tags</li>
+              <li>Wrote a photo finder that gathers a product's full image gallery on its own, merging the same photo at different sizes and filtering out icons, logos and swatches</li>
+              <li>Built a detail view for collected items with a photo carousel and specs, plus search and sort</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <span class="idx">02</span>
+            <h3>Decidio AR Vehicle Intelligence</h3>
+            <p class="kind">Capstone Project</p>
+            <ul class="points">
+              <li>Designed and developed an AR-based iOS app to capture and identify vehicles using image recognition and AI-driven APIs</li>
+              <li>Implemented Firebase as a middleware layer to store vehicle data and orchestrate API requests</li>
+              <li>Built JSON parsing to keep data flowing between CarNet, Gemini, Firebase, and the UI</li>
+              <li>Displayed enriched vehicle specifications dynamically in the app</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <span class="idx">03</span>
+            <h3>Poster Genre Prediction</h3>
+            <p class="kind">Deep Learning, Keras / TensorFlow</p>
+            <ul class="points">
+              <li>Trained a convolutional neural network to classify movie posters by genre using pixel color data</li>
+              <li>Engineered and trained the model with Python and TensorFlow/Keras</li>
+              <li>Reached 55% accuracy across 20+ genre classes, a strong result given how ambiguous multi-genre classification is from visuals alone</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <header><h2><span class="num">05</span>Skills</h2></header>
+        <div>
+          <div class="skill-group">
+            <h3>Languages &amp; Tools</h3>
+            <ul class="tags">
+              <li>Swift</li><li>SwiftUI</li><li>Python</li><li>SQL</li><li>TypeScript</li><li>Java</li><li>C++</li><li>TensorFlow</li><li>Firebase</li><li>Tableau</li><li>GitHub</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Focus</h3>
+            <ul class="tags">
+              <li>iOS Development</li><li>Machine Learning</li><li>Data Analysis</li><li>Data Visualization</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label">06 — Contact</p>
+      <a class="email" href="mailto:josephgulinobusiness@gmail.com">josephgulinobusiness@gmail.com</a>
+      <ul class="links">
+        <li><a href="https://www.linkedin.com/in/joseph-gulino" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/josephgulino" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+      <footer>
+        <span>© 2026 Joseph Gulino</span>
+        <span>Raleigh, NC</span>
+      </footer>
+    </div>
+  </section>
 
 </body>
 </html>
