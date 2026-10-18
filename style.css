@@ -63,7 +63,7 @@ a { color: inherit; }
 }
 .bar nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.hero { padding-top: clamp(72px, 14vw, 180px); }
+.hero { padding-top: clamp(72px, 12vw, 160px); padding-bottom: clamp(48px, 7vw, 96px); }
 .hero h1 {
   font-weight: 700;
   font-size: clamp(44px, 6.4vw, 92px);
@@ -83,22 +83,20 @@ a { color: inherit; }
 .lede strong { font-weight: 400; }
 
 .facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--ink);
-  margin-top: clamp(56px, 8vw, 112px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 48px;
+  margin: clamp(40px, 6vw, 72px) 0 0;
+  font-size: 15px;
 }
-.facts div { padding: 16px 16px 24px 0; }
-.facts div + div { padding-left: 16px; border-left: 1px solid var(--ink); }
+.facts div { display: flex; gap: 12px; align-items: baseline; }
 .facts dt {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--mute);
-  margin-bottom: 6px;
 }
-.facts dd { margin: 0; line-height: 1.35; }
-.facts dd small { display: block; font-weight: 300; font-size: 15px; }
+.facts dd { margin: 0; }
 
 .section {
   display: grid;
@@ -174,11 +172,9 @@ a { color: inherit; }
 .project { padding: 0 24px 8px 0; }
 .project + .project { padding-left: 24px; border-left: 1px solid var(--ink); }
 .project .idx {
-  display: block;
-  font-size: 13px;
   font-weight: 300;
   color: var(--mute);
-  margin-bottom: 10px;
+  margin-right: 10px;
 }
 .project h3 { margin: 0; font-size: 18px; line-height: 1.2; letter-spacing: -0.015em; }
 .project .kind { margin: 4px 0 0; font-style: italic; color: var(--mute); }
@@ -254,17 +250,10 @@ a { color: inherit; }
 @media (max-width: 720px) {
   body { font-size: 16px; }
   .bar .wrap { height: 52px; }
-  .hero { padding-top: 48px; }
+  .hero { padding-top: 48px; padding-bottom: 48px; }
   .lede { margin-top: 10px; }
-  .facts { grid-template-columns: 1fr; margin-top: 40px; }
-  .facts div, .facts div + div {
-    display: grid;
-    grid-template-columns: 84px 1fr;
-    padding: 12px 0;
-    border-left: 0;
-  }
-  .facts div + div { border-top: 1px solid var(--ink); }
-  .facts dt { margin: 3px 0 0; }
+  .facts { flex-direction: column; gap: 6px; margin-top: 32px; }
+  .facts dt { width: 64px; flex-shrink: 0; }
   .section { grid-template-columns: 1fr; gap: 20px; padding: 20px 0 56px; scroll-margin-top: 52px; }
   .section h2 { position: static; }
   .about p { font-size: 19px; }
